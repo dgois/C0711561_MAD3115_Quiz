@@ -21,6 +21,9 @@ class InitialViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func loginTapButton(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "playSceneSegue", sender: nil)
+    }
 
     /*
     // MARK: - Navigation

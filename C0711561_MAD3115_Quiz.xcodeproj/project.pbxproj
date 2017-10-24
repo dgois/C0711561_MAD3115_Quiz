@@ -7,21 +7,36 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9B4D23511F9EC8D700C9926C /* RankingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4D23501F9EC8D700C9926C /* RankingTableViewCell.swift */; };
+		9B4D23561F9ED8D200C9926C /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4D23551F9ED8D200C9926C /* Question.swift */; };
 		9B78EC161F9E98740028AED5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B78EC151F9E98740028AED5 /* AppDelegate.swift */; };
-		9B78EC181F9E98750028AED5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B78EC171F9E98750028AED5 /* ViewController.swift */; };
+		9B78EC181F9E98750028AED5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B78EC171F9E98750028AED5 /* LoginViewController.swift */; };
 		9B78EC1B1F9E98750028AED5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B78EC191F9E98750028AED5 /* Main.storyboard */; };
 		9B78EC1D1F9E98750028AED5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B78EC1C1F9E98750028AED5 /* Assets.xcassets */; };
 		9B78EC201F9E98750028AED5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B78EC1E1F9E98750028AED5 /* LaunchScreen.storyboard */; };
+		9B78EC281F9E9AA30028AED5 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B78EC271F9E9AA30028AED5 /* InitialViewController.swift */; };
+		9B78EC2B1F9E9BF30028AED5 /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B78EC2A1F9E9BF30028AED5 /* QuestionViewController.swift */; };
+		9B78EC2D1F9E9D010028AED5 /* InstructionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B78EC2C1F9E9D010028AED5 /* InstructionViewController.swift */; };
+		9B78EC311F9E9E730028AED5 /* RankingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B78EC301F9E9E730028AED5 /* RankingTableViewController.swift */; };
+		9BA8E0221F9EC65400D51B7A /* DLRadioButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BA8E0211F9EC65400D51B7A /* DLRadioButton.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9B4D23501F9EC8D700C9926C /* RankingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingTableViewCell.swift; sourceTree = "<group>"; };
+		9B4D23551F9ED8D200C9926C /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		9B78EC121F9E98740028AED5 /* C0711561_MAD3115_Quiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = C0711561_MAD3115_Quiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B78EC151F9E98740028AED5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9B78EC171F9E98750028AED5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		9B78EC171F9E98750028AED5 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		9B78EC1A1F9E98750028AED5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9B78EC1C1F9E98750028AED5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9B78EC1F1F9E98750028AED5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9B78EC211F9E98750028AED5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9B78EC271F9E9AA30028AED5 /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
+		9B78EC2A1F9E9BF30028AED5 /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
+		9B78EC2C1F9E9D010028AED5 /* InstructionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionViewController.swift; sourceTree = "<group>"; };
+		9B78EC301F9E9E730028AED5 /* RankingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingTableViewController.swift; sourceTree = "<group>"; };
+		9BA8E0201F9EC65400D51B7A /* DLRadioButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DLRadioButton.h; sourceTree = "<group>"; };
+		9BA8E0211F9EC65400D51B7A /* DLRadioButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DLRadioButton.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +50,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9B4D23521F9ECFE900C9926C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9B4D23551F9ED8D200C9926C /* Question.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		9B78EC091F9E98740028AED5 = {
 			isa = PBXGroup;
 			children = (
@@ -54,14 +77,38 @@
 		9B78EC141F9E98740028AED5 /* C0711561_MAD3115_Quiz */ = {
 			isa = PBXGroup;
 			children = (
+				9B4D23521F9ECFE900C9926C /* Model */,
+				9B78EC321F9EB7180028AED5 /* External */,
+				9B78EC291F9E9AAE0028AED5 /* Controller */,
 				9B78EC151F9E98740028AED5 /* AppDelegate.swift */,
-				9B78EC171F9E98750028AED5 /* ViewController.swift */,
 				9B78EC191F9E98750028AED5 /* Main.storyboard */,
 				9B78EC1C1F9E98750028AED5 /* Assets.xcassets */,
 				9B78EC1E1F9E98750028AED5 /* LaunchScreen.storyboard */,
 				9B78EC211F9E98750028AED5 /* Info.plist */,
+				9B4D23501F9EC8D700C9926C /* RankingTableViewCell.swift */,
 			);
 			path = C0711561_MAD3115_Quiz;
+			sourceTree = "<group>";
+		};
+		9B78EC291F9E9AAE0028AED5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				9B78EC271F9E9AA30028AED5 /* InitialViewController.swift */,
+				9B78EC171F9E98750028AED5 /* LoginViewController.swift */,
+				9B78EC2A1F9E9BF30028AED5 /* QuestionViewController.swift */,
+				9B78EC2C1F9E9D010028AED5 /* InstructionViewController.swift */,
+				9B78EC301F9E9E730028AED5 /* RankingTableViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		9B78EC321F9EB7180028AED5 /* External */ = {
+			isa = PBXGroup;
+			children = (
+				9BA8E0201F9EC65400D51B7A /* DLRadioButton.h */,
+				9BA8E0211F9EC65400D51B7A /* DLRadioButton.m */,
+			);
+			path = External;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -96,6 +143,7 @@
 				TargetAttributes = {
 					9B78EC111F9E98740028AED5 = {
 						CreatedOnToolsVersion = 9.0;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -136,7 +184,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9B78EC181F9E98750028AED5 /* ViewController.swift in Sources */,
+				9B78EC2D1F9E9D010028AED5 /* InstructionViewController.swift in Sources */,
+				9B78EC181F9E98750028AED5 /* LoginViewController.swift in Sources */,
+				9B4D23511F9EC8D700C9926C /* RankingTableViewCell.swift in Sources */,
+				9B4D23561F9ED8D200C9926C /* Question.swift in Sources */,
+				9BA8E0221F9EC65400D51B7A /* DLRadioButton.m in Sources */,
+				9B78EC281F9E9AA30028AED5 /* InitialViewController.swift in Sources */,
+				9B78EC2B1F9E9BF30028AED5 /* QuestionViewController.swift in Sources */,
+				9B78EC311F9E9E730028AED5 /* RankingTableViewController.swift in Sources */,
 				9B78EC161F9E98740028AED5 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -274,11 +329,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = C0711561_MAD3115_Quiz/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "CestarCollege.C0711561-MAD3115-Quiz";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -288,6 +345,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = C0711561_MAD3115_Quiz/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

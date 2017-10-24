@@ -9,6 +9,12 @@
 import UIKit
 
 class RankingTableViewCell: UITableViewCell {
+    
+    // MARK: Parameters
+    @IBOutlet weak var lblUserName: UILabel!
+    @IBOutlet weak var lblHighestScore: UILabel!
+    @IBOutlet weak var lblLowestScore: UILabel!
+    @IBOutlet weak var lblAttempts: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()

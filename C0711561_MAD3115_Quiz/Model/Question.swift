@@ -7,3 +7,26 @@
 //
 
 import Foundation
+
+class Question {
+    var statement: String?
+    var options: [String]?
+    var correctOptionIndex: Int?
+    
+    init(_ statement: String, _ options: [String], _ correctOptionIndex: Int) {
+        self.statement = statement
+        self.options = options
+        self.correctOptionIndex = correctOptionIndex
+    }
+    
+    func isCorrect(_ selectedIndex: Int) -> Bool {
+        return correctOptionIndex == selectedIndex
+    }
+    
+    func show() {
+        print("\(statement!)")
+        for option in options! {
+            print("\t\(option)")
+        }
+    }
+}

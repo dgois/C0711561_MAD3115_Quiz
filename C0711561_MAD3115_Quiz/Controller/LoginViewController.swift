@@ -20,6 +20,9 @@ class LoginViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
+    @IBAction func loginTapButton(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "initialSceneSegue", sender: nil)
+    }
+    
 }
 

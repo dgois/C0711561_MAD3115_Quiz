@@ -9,10 +9,17 @@
 import UIKit
 
 class QuestionViewController: UIViewController {
+    
+    // MARK: Parameters
+    @IBOutlet weak var lblTimer: UILabel!
+    
+    var seconds = 20
+    var timer = Timer()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        runTimer()
+        
         // Do any additional setup after loading the view.
     }
 
@@ -21,7 +28,33 @@ class QuestionViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    func runTimer() {
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: (#selector(QuestionViewController.updateTimer)), userInfo: nil, repeats: true)
+    }
+    
+    @objc func updateTimer() {
+        seconds -= 1
+        lblTimer.text = "\(seconds)"
+        
+        if seconds < 10 {
+            lblTimer.textColor = .red
+        }
+        
+        if seconds == 0 {
+            timer.invalidate()
+            
+            seconds = 20
+            
+            lblTimer.text = "\(seconds)"
+            
+            lblTimer.textColor = .black
+            
+            runTimer()
+        }
+    }
+    
+    
+    
     /*
     // MARK: - Navigation
 
