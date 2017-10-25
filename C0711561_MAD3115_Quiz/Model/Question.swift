@@ -13,7 +13,7 @@ class Question {
     var options: [String]?
     var correctOptionIndex: Int?
     
-    init(_ statement: String, _ options: [String], _ correctOptionIndex: Int) {
+    init(statement statement: String, options options: [String], correctOptionIndex correctOptionIndex: Int) {
         self.statement = statement
         self.options = options
         self.correctOptionIndex = correctOptionIndex
@@ -21,12 +21,5 @@ class Question {
     
     func isCorrect(_ selectedIndex: Int) -> Bool {
         return correctOptionIndex == selectedIndex
-    }
-    
-    func show() {
-        print("\(statement!)")
-        for option in options! {
-            print("\t\(option)")
-        }
     }
 }

@@ -160,7 +160,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Question: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zND-Qf-vsv">
-                                <rect key="frame" x="38" y="213" width="78" height="21"/>
+                                <rect key="frame" x="38" y="213" width="321" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -170,54 +170,53 @@
                                 <rect key="frame" x="171" y="488" width="32" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Next"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Kv-Hp-yYh" customClass="DLRadioButton">
-                                <rect key="frame" x="38" y="247" width="118" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Option 1">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                </state>
                                 <connections>
-                                    <outletCollection property="otherButtons" destination="R5d-LD-Etk" id="Ey9-cv-zF6"/>
-                                    <outletCollection property="otherButtons" destination="skL-0i-ldq" id="EqS-bn-FS6"/>
-                                    <outletCollection property="otherButtons" destination="73U-u6-njP" id="pXQ-3a-yE4"/>
-                                    <outletCollection property="otherButtons" destination="zgK-MN-98L" id="Aek-8q-aap"/>
+                                    <action selector="nextQuestion:" destination="RSA-NZ-2og" eventType="touchUpInside" id="xHX-A5-3Pv"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R5d-LD-Etk" customClass="DLRadioButton">
-                                <rect key="frame" x="38" y="285" width="118" height="34"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5mF-KM-EsK">
+                                <rect key="frame" x="54" y="260" width="289" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Option 2">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                </state>
+                                <state key="normal" title="Option One"/>
+                                <connections>
+                                    <action selector="selectOption:" destination="RSA-NZ-2og" eventType="touchUpInside" id="Cjs-ms-Vcx"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="73U-u6-njP" customClass="DLRadioButton">
-                                <rect key="frame" x="38" y="358" width="118" height="34"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="onZ-eo-4mT">
+                                <rect key="frame" x="54" y="298" width="283" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Option 4">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                </state>
+                                <state key="normal" title="Option Two"/>
+                                <connections>
+                                    <action selector="selectOption:" destination="RSA-NZ-2og" eventType="touchUpInside" id="KBB-RO-HUq"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="skL-0i-ldq" customClass="DLRadioButton">
-                                <rect key="frame" x="38" y="320" width="118" height="34"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jAJ-GV-HOe">
+                                <rect key="frame" x="54" y="369" width="289" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Option 3">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                </state>
+                                <state key="normal" title="Option Four"/>
+                                <connections>
+                                    <action selector="selectOption:" destination="RSA-NZ-2og" eventType="touchUpInside" id="abl-zf-8Vp"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zgK-MN-98L" customClass="DLRadioButton">
-                                <rect key="frame" x="38" y="396" width="118" height="34"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Plg-fR-YuX">
+                                <rect key="frame" x="54" y="336" width="283" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Option 5">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                </state>
+                                <state key="normal" title="Option tree"/>
+                                <connections>
+                                    <action selector="selectOption:" destination="RSA-NZ-2og" eventType="touchUpInside" id="21a-Su-uRo"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="6Od-Rs-Eyk"/>
                     </view>
                     <connections>
+                        <outlet property="lblQuestionStatement" destination="zND-Qf-vsv" id="B7t-jh-dsw"/>
                         <outlet property="lblTimer" destination="KWJ-6R-VA4" id="pke-JP-bW1"/>
+                        <outlet property="optionFour" destination="jAJ-GV-HOe" id="xPM-z6-8ek"/>
+                        <outlet property="optionOne" destination="5mF-KM-EsK" id="nZI-tG-OmD"/>
+                        <outlet property="optionTree" destination="Plg-fR-YuX" id="GbG-Qs-1aL"/>
+                        <outlet property="optionTwo" destination="onZ-eo-4mT" id="uuX-1d-hvB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pR4-cd-LAo" userLabel="First Responder" sceneMemberID="firstResponder"/>
