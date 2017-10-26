@@ -18,6 +18,8 @@
 		9B78EC2D1F9E9D010028AED5 /* InstructionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B78EC2C1F9E9D010028AED5 /* InstructionViewController.swift */; };
 		9B78EC311F9E9E730028AED5 /* RankingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B78EC301F9E9E730028AED5 /* RankingTableViewController.swift */; };
 		9B9CD7771FA00740007A77C9 /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B78EC2A1F9E9BF30028AED5 /* QuestionViewController.swift */; };
+		9BE1E2D51FA1415B00183AA6 /* EndQuizSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE1E2D41FA1415B00183AA6 /* EndQuizSummary.swift */; };
+		9BE1E3171FA164FD00183AA6 /* RankingItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE1E3161FA164FD00183AA6 /* RankingItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		9B78EC2A1F9E9BF30028AED5 /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
 		9B78EC2C1F9E9D010028AED5 /* InstructionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionViewController.swift; sourceTree = "<group>"; };
 		9B78EC301F9E9E730028AED5 /* RankingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingTableViewController.swift; sourceTree = "<group>"; };
+		9BE1E2D41FA1415B00183AA6 /* EndQuizSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndQuizSummary.swift; sourceTree = "<group>"; };
+		9BE1E3161FA164FD00183AA6 /* RankingItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +55,8 @@
 			isa = PBXGroup;
 			children = (
 				9B4D23551F9ED8D200C9926C /* Question.swift */,
+				9BE1E2D41FA1415B00183AA6 /* EndQuizSummary.swift */,
+				9BE1E3161FA164FD00183AA6 /* RankingItem.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -180,7 +186,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				9B78EC2D1F9E9D010028AED5 /* InstructionViewController.swift in Sources */,
+				9BE1E2D51FA1415B00183AA6 /* EndQuizSummary.swift in Sources */,
 				9B78EC181F9E98750028AED5 /* LoginViewController.swift in Sources */,
+				9BE1E3171FA164FD00183AA6 /* RankingItem.swift in Sources */,
 				9B4D23511F9EC8D700C9926C /* RankingTableViewCell.swift in Sources */,
 				9B4D23561F9ED8D200C9926C /* Question.swift in Sources */,
 				9B78EC281F9E9AA30028AED5 /* InitialViewController.swift in Sources */,

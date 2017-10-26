@@ -9,10 +9,27 @@
 import UIKit
 
 class RankingTableViewController: UITableViewController {
+    
+    var ranking = [String: RankingItem]()
+    
+    var myUserDefault = UserDefaults.standard
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.title = "Ranking"
 
+        let ri1 = RankingItem(userName: "denisdwtg")
+        ri1.attempts = 3
+        ri1.higestScore = 10
+        ri1.lowestScore = 3
+        ranking["denisdwtg"] = ri1
+        
+        let ri2 = RankingItem(userName: "arthurgois")
+        ri2.attempts = 3
+        ri2.higestScore = 10
+        ri2.lowestScore = 3
+        ranking["arthurgois"] = ri2
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -29,31 +46,39 @@ class RankingTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return ranking.count
     }
 
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
+        let cell = tableView.dequeueReusableCell(withIdentifier: "rankingTableViewCell", for: indexPath) as! RankingTableViewCell
+        
+        let keys = Array(ranking.keys)
+        
+        if let rankingItem = ranking[keys[indexPath.row]] {
+            cell.lblUserName.text = rankingItem.userName
+            cell.lblHighestScore.text = String(rankingItem.higestScore)
+            
+            if let lowerstScore = rankingItem.lowestScore {
+                cell.lblLowestScore.text = String(lowerstScore)
+            } else {
+                cell.lblLowestScore.text = " --- "
+            }
+            
+            cell.lblAttempts.text = String(rankingItem.attempts)
+        }
 
         return cell
     }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
+    
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
-        return true
+        return false
     }
-    */
 
     /*
     // Override to support editing the table view.

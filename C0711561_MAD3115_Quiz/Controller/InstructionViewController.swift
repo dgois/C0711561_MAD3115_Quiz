@@ -12,6 +12,8 @@ class InstructionViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.title = "Instructions"
 
         // Do any additional setup after loading the view.
     }

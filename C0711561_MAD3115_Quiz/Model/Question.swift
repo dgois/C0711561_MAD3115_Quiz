@@ -9,11 +9,11 @@
 import Foundation
 
 class Question {
-    var statement: String?
-    var options: [String]?
-    var correctOptionIndex: Int?
+    var statement: String
+    var options: [String]
+    var correctOptionIndex: Int
     
-    init(statement statement: String, options options: [String], correctOptionIndex correctOptionIndex: Int) {
+    init(statement: String, options: [String], correctOptionIndex: Int) {
         self.statement = statement
         self.options = options
         self.correctOptionIndex = correctOptionIndex

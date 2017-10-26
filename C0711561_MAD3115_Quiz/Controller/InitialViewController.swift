@@ -9,11 +9,9 @@
 import UIKit
 
 class InitialViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -24,7 +22,15 @@ class InitialViewController: UIViewController {
     @IBAction func loginTapButton(_ sender: UIButton) {
         self.performSegue(withIdentifier: "playSceneSegue", sender: nil)
     }
-
+    
+    @IBAction func instructionsTapButton(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "instructionSceneSegue", sender: nil)
+    }
+    
+    @IBAction func rankingTapButton(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "rankingSceneSegue", sender: nil)
+    }
+    
     /*
     // MARK: - Navigation
 
