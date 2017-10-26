@@ -19,8 +19,21 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        hideNavigationButton()
         retrieveUserNameAndPasswordFromUserDefault()
+        for family: String in UIFont.familyNames
+        {
+            print("\(family)")
+            for names: String in UIFont.fontNames(forFamilyName: family)
+            {
+                print("== \(names)")
+            }
+        }
+    }
+    
+    fileprivate func hideNavigationButton() {
+        let backButton = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain, target: navigationController, action: nil)
+        navigationItem.leftBarButtonItem = backButton
     }
     
     fileprivate func retrieveUserNameAndPasswordFromUserDefault() {

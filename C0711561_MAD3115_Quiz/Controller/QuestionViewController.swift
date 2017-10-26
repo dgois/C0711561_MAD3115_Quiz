@@ -39,9 +39,11 @@ class QuestionViewController: UIViewController {
     var myUserDefault = UserDefaults.standard
     
     fileprivate func cleanAnswerSelection() {
+        options = [optionOne, optionTwo, optionTree, optionFour]
         options.forEach { (button) in
             button.backgroundColor = UIColor.white
         }
+        selectedOptionButton = nil
     }
     
     fileprivate func hideNavigationButton() {
@@ -53,13 +55,9 @@ class QuestionViewController: UIViewController {
         super.viewDidLoad()
         
         hideNavigationButton()
-        
         runTimer()
         createQuestions()
-        options = [optionOne, optionTwo, optionTree, optionFour]
-        
         cleanAnswerSelection()
-        
         configureNextQuestion()
         
         summary = EndQuizSummary(totalQuestions: questions.count)
@@ -116,19 +114,8 @@ class QuestionViewController: UIViewController {
         timer.invalidate()
     }
     
-    
     func createQuestions() {
-        questions = [
-            Question(statement: "What is the population of Brazil?",
-                              options: ["184,200,000", "256,988,000", "100,000.000", "145,000,000"],
-                              correctOptionIndex: 1),
-            Question(statement: "________ is Brazil's most common religion.",
-                     options: ["Christianity", "Islam", "Hinduism", "Buddhism"],
-                     correctOptionIndex: 0),
-            Question(statement: "What is Brazil's type of government?",
-                     options: ["Democratic", "Dictatorship", "Monarchy", "Federal Republic"],
-                     correctOptionIndex: 3),
-        ]
+        questions = QuestionsManagement().getQuestionList()
     }
     
     fileprivate func showSummaryAlert() {
@@ -144,7 +131,6 @@ class QuestionViewController: UIViewController {
         let rankingActin = UIAlertAction(title: "Ranking", style: .default) {
             [weak summaryAlertViewController] _ in
             if let _ = summaryAlertViewController {
-                //self.navigationController?.viewControllers.removeLast()
                 self.performSegue(withIdentifier: "rankingSceneSegueFromSummary", sender: nil)
             }
         }
@@ -182,11 +168,10 @@ class QuestionViewController: UIViewController {
     }
     
     fileprivate func verifyCorrectness() {
-        let isSelectedIndex = getSelectedOption()
+        let selectedOptionOrSkipped = getSelecedOptionOrSkipped()
         
-        if isSelectedIndex.0 {
-            print("\(answeredQuestionsAmount)")
-            if questions[answeredQuestionsAmount - 1].isCorrect(isSelectedIndex.1) {
+        if selectedOptionOrSkipped.isSelected {
+            if questions[answeredQuestionsAmount - 1].isCorrect(selectedOptionOrSkipped.selectedOption) {
                 summary?.sumCorrectAnswers()
             }
         } else {
@@ -201,7 +186,7 @@ class QuestionViewController: UIViewController {
         configureNextQuestion()
     }
     
-    func getSelectedOption() -> (Bool, Int) {
+    func getSelecedOptionOrSkipped() -> (isSelected: Bool, selectedOption: Int) {
         var selectedOption = (false, 0)
         for i in 0...3 {
             if options[i].titleLabel?.text == selectedOptionButton?.titleLabel?.text {

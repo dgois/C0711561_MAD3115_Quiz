@@ -32,8 +32,9 @@ class InitialViewController: UIViewController {
     }
     
     @IBAction func logoutButtonTap(_ sender: UIBarButtonItem) {
-        
-        
+        if let loginViewController = storyboard?.instantiateViewController(withIdentifier: "loginScene") {
+            self.present(loginViewController, animated: true, completion: nil)
+        }
     }
     /*
     // MARK: - Navigation
