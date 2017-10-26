@@ -138,7 +138,6 @@ class QuestionViewController: UIViewController {
             [weak summaryAlertViewController] _ in
             if let _ = summaryAlertViewController {
                 self.navigationController?.popToRootViewController(animated: true)
-                //self.performSegue(withIdentifier: "homeSegueFromSummary", sender: nil)
             }
         }
         

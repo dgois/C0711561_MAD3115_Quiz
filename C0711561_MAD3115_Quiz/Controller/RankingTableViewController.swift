@@ -17,29 +17,22 @@ class RankingTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = "Ranking"
+        configureNavigationBar()
 
         ranking = RankingManagement().getRanking()
-//        let ri1 = RankingItem(userName: "denisdwtg")
-//        ri1.attempts = 3
-//        ri1.higestScore = 10
-//        ri1.lowestScore = 3
-//        ranking["denisdwtg"] = ri1
-//
-//        let ri2 = RankingItem(userName: "arthurgois")
-//        ri2.attempts = 3
-//        ri2.higestScore = 10
-//        ri2.lowestScore = 3
-//        ranking["arthurgois"] = ri2
+    }
 
+    fileprivate func configureNavigationBar() {
+        self.title = "Ranking"
         
+        let backButton = UIBarButtonItem(title: "Home", style: .plain, target: self, action: #selector(goToHome))
+        navigationItem.leftBarButtonItem = backButton
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    @objc func goToHome() {
+        navigationController?.popToRootViewController(animated: true)
     }
-
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {

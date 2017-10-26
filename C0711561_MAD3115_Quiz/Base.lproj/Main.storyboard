@@ -239,7 +239,6 @@ It will be possible to check a raking of candidates that took this quiz, the inf
                         <outlet property="optionTwo" destination="onZ-eo-4mT" id="uuX-1d-hvB"/>
                         <outlet property="questionsProgressBar" destination="vAS-cP-npw" id="nTt-IL-WBK"/>
                         <segue destination="I75-pd-Apt" kind="show" identifier="rankingSceneSegueFromSummary" id="x4f-Bl-gp2"/>
-                        <segue destination="EkQ-Y9-vuB" kind="show" identifier="homeSegueFromSummary" id="hbN-JQ-nTw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pR4-cd-LAo" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -351,7 +350,6 @@ It will be possible to check a raking of candidates that took this quiz, the inf
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="hbN-JQ-nTw"/>
         <segue reference="x4f-Bl-gp2"/>
     </inferredMetricsTieBreakers>
 </document>
