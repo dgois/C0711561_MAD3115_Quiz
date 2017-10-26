@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="SGE-ge-L94">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -22,14 +22,14 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WDb-l8-F2H">
                                 <rect key="frame" x="139" y="266" width="97" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LSw-2Y-5pd">
                                 <rect key="frame" x="168" y="385" width="38" height="30"/>
@@ -59,12 +59,12 @@
                         <outlet property="switchRememberMe" destination="N8v-9s-Zon" id="KJm-89-f75"/>
                         <outlet property="txtPassword" destination="WDb-l8-F2H" id="Oit-i9-AuG"/>
                         <outlet property="txtUserName" destination="OhZ-77-Bs6" id="0xF-bd-h0Q"/>
-                        <segue destination="RLo-vU-IqI" kind="show" identifier="initialSceneSegue" id="KnB-af-RE9"/>
+                        <segue destination="EkQ-Y9-vuB" kind="show" identifier="initialSceneSegue" id="KnB-af-RE9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="456.80000000000001" y="118.29085457271366"/>
+            <point key="canvasLocation" x="-295" y="117"/>
         </scene>
         <!--Initial View Controller-->
         <scene sceneID="fer-h4-SbS">
@@ -102,6 +102,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="LeP-Ml-Win"/>
                     </view>
+                    <navigationItem key="navigationItem" id="kIn-EA-Lkb">
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="CxF-Gm-uvF">
+                            <connections>
+                                <action selector="logoutButtonTap:" destination="RLo-vU-IqI" id="HfV-ma-9cp"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <segue destination="RSA-NZ-2og" kind="show" identifier="playSceneSegue" id="J7a-DI-66p"/>
                         <segue destination="GO0-YK-Ge0" kind="show" identifier="instructionSceneSegue" id="kvZ-Kc-wvX"/>
@@ -110,7 +117,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4I1-Tm-Kf2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1252" y="118"/>
+            <point key="canvasLocation" x="1591.2" y="117.39130434782609"/>
         </scene>
         <!--Instruction View Controller-->
         <scene sceneID="iw0-za-5XU">
@@ -231,12 +238,12 @@ It will be possible to check a raking of candidates that took this quiz, the inf
                         <outlet property="optionTwo" destination="onZ-eo-4mT" id="uuX-1d-hvB"/>
                         <outlet property="questionsProgressBar" destination="vAS-cP-npw" id="nTt-IL-WBK"/>
                         <segue destination="I75-pd-Apt" kind="show" identifier="rankingSceneSegueFromSummary" id="x4f-Bl-gp2"/>
-                        <segue destination="RLo-vU-IqI" kind="show" identifier="homeSegueFromSummary" id="hbN-JQ-nTw"/>
+                        <segue destination="EkQ-Y9-vuB" kind="show" identifier="homeSegueFromSummary" id="hbN-JQ-nTw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pR4-cd-LAo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2133.5999999999999" y="117.39130434782609"/>
+            <point key="canvasLocation" x="2472.8000000000002" y="117.39130434782609"/>
         </scene>
         <!--Ranking Table View Controller-->
         <scene sceneID="j8v-l6-ghc">
@@ -324,26 +331,27 @@ It will be possible to check a raking of candidates that took this quiz, the inf
             <point key="canvasLocation" x="2133.5999999999999" y="858.62068965517244"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="CPa-S7-izK">
+        <scene sceneID="6z3-4Y-rkc">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="SGE-ge-L94" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="EkQ-Y9-vuB" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="rhm-cl-aLe">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="vrY-Ss-Ouo">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="2TY-a3-5Vp"/>
+                        <segue destination="RLo-vU-IqI" kind="relationship" relationship="rootViewController" id="Xqd-Tu-QRJ"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8co-Tp-dmk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h4P-7c-M0H" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-298" y="118"/>
+            <point key="canvasLocation" x="633" y="117"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="J7a-DI-66p"/>
+        <segue reference="hbN-JQ-nTw"/>
         <segue reference="OvW-aS-RX0"/>
-        <segue reference="KnB-af-RE9"/>
     </inferredMetricsTieBreakers>
 </document>

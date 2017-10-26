@@ -31,6 +31,10 @@ class InitialViewController: UIViewController {
         self.performSegue(withIdentifier: "rankingSceneSegue", sender: nil)
     }
     
+    @IBAction func logoutButtonTap(_ sender: UIBarButtonItem) {
+        
+        
+    }
     /*
     // MARK: - Navigation
 

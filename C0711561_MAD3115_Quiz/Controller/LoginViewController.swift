@@ -19,8 +19,7 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        myUserDefault = UserDefaults.standard
+
         if let userName = myUserDefault.value(forKey: "userName") {
             txtUserName.text = userName as? String
         }
@@ -36,8 +35,8 @@ class LoginViewController: UIViewController {
 
     @IBAction func loginTapButton(_ sender: UIButton) {
         if validUsers[txtUserName.text!] != nil && validUsers[txtUserName.text!] == txtPassword.text {
-            self.performSegue(withIdentifier: "initialSceneSegue", sender: nil)
             configureRememberMe()
+            self.performSegue(withIdentifier: "initialSceneSegue", sender: nil)
         } else {
             let alert = UIAlertController(title: "Fail Login", message: "User/Pass is wrong", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
