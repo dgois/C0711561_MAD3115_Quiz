@@ -19,22 +19,20 @@ class RankingTableViewController: UITableViewController {
         
         self.title = "Ranking"
 
-        let ri1 = RankingItem(userName: "denisdwtg")
-        ri1.attempts = 3
-        ri1.higestScore = 10
-        ri1.lowestScore = 3
-        ranking["denisdwtg"] = ri1
-        
-        let ri2 = RankingItem(userName: "arthurgois")
-        ri2.attempts = 3
-        ri2.higestScore = 10
-        ri2.lowestScore = 3
-        ranking["arthurgois"] = ri2
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
+        ranking = RankingManagement().getRanking()
+//        let ri1 = RankingItem(userName: "denisdwtg")
+//        ri1.attempts = 3
+//        ri1.higestScore = 10
+//        ri1.lowestScore = 3
+//        ranking["denisdwtg"] = ri1
+//
+//        let ri2 = RankingItem(userName: "arthurgois")
+//        ri2.attempts = 3
+//        ri2.higestScore = 10
+//        ri2.lowestScore = 3
+//        ranking["arthurgois"] = ri2
 
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
     }
 
     override func didReceiveMemoryWarning() {

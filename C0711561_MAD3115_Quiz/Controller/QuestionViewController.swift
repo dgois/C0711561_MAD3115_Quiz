@@ -137,8 +137,8 @@ class QuestionViewController: UIViewController {
         let okAction = UIAlertAction(title: "OK", style: .default) {
             [weak summaryAlertViewController] _ in
             if let _ = summaryAlertViewController {
-                //self.navigationController?.viewControllers.removeLast()
-                self.performSegue(withIdentifier: "homeSegueFromSummary", sender: nil)
+                self.navigationController?.popToRootViewController(animated: true)
+                //self.performSegue(withIdentifier: "homeSegueFromSummary", sender: nil)
             }
         }
         
@@ -154,24 +154,6 @@ class QuestionViewController: UIViewController {
         summaryAlertViewController.addAction(rankingActin)
         
         self.present(summaryAlertViewController, animated: true, completion: nil)
-    }
-    
-    fileprivate func setUserDefaultRankingDictionary() {
-        if let loggedUserName = myUserDefault.value(forKey: "loggedUserName") as? String {
-            if let rankingFromUserDefault = myUserDefault.value(forKey: "ranking") {
-                var ranking = rankingFromUserDefault as? [String: RankingItem]
-                let rankingItem = ranking![loggedUserName]
-                rankingItem?.attempts += 1
-                if (rankingItem!.higestScore < summary!.correctAnswers) {
-                    rankingItem!.higestScore = summary!.correctAnswers
-                }
-                if (rankingItem!.lowestScore! > summary!.wrongAnswers) {
-                    rankingItem!.lowestScore = summary!.wrongAnswers
-                }
-                ranking![loggedUserName] = rankingItem
-                myUserDefault.set(ranking, forKey: loggedUserName)
-            }
-        }
     }
     
     fileprivate func configureNextQuestion() {
@@ -194,7 +176,7 @@ class QuestionViewController: UIViewController {
             answeredQuestionsAmount += 1
             
         } else {
-            setUserDefaultRankingDictionary()
+            RankingManagement().createOrUpdateRankingStatistics(summary: summary!)
             pauseTimer()
             showSummaryAlert()
         }

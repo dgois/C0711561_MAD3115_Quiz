@@ -20,4 +20,32 @@ class RankingItem {
         higestScore = 0
         attempts = 0
     }
+    
+    init(rankingItemAsDictionary: [String: Any]) {
+        self.userName = rankingItemAsDictionary["userName"] as! String
+        
+        let higestScoreAsString = rankingItemAsDictionary["higestScore"] as! String
+        self.higestScore = Int(higestScoreAsString)!
+        
+        let lowestScoreAsString = rankingItemAsDictionary["lowestScore"] as! String
+        self.lowestScore = Int(lowestScoreAsString)!
+        
+        let attemptsAsString = rankingItemAsDictionary["attempts"] as! String
+        self.attempts = Int(attemptsAsString)!
+    }
+    
+    func convertToDictionary() -> [String: String] {
+        var response = [String: String]()
+        response["userName"] = userName
+        response["higestScore"] = String(higestScore)
+        response["attempts"] = String(attempts)
+        
+        if let ls = lowestScore {
+            response["lowestScore"] = String(ls)
+        } else {
+            response["lowestScore"] = nil
+        }
+
+        return response
+    }
 }

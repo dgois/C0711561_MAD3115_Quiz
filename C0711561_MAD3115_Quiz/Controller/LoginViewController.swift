@@ -14,44 +14,57 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var txtPassword: UITextField!
     @IBOutlet weak var switchRememberMe: UISwitch!
     
-    var myUserDefault = UserDefaults.standard
+    var quizUserDefault = UserDefaults.standard
     let validUsers: [String: String] = ["denisgois":"123", "arthurgois":"123"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        if let userName = myUserDefault.value(forKey: "userName") {
-            txtUserName.text = userName as? String
+        retrieveUserNameAndPasswordFromUserDefault()
+    }
+    
+    fileprivate func retrieveUserNameAndPasswordFromUserDefault() {
+        if let userName = quizUserDefault.string(forKey: "userName") {
+            txtUserName.text = userName
         }
         
-        if let password = myUserDefault.value(forKey: "userPassword") {
-            txtPassword.text = password as? String
+        if let password = quizUserDefault.string(forKey: "userPassword") {
+            txtPassword.text = password	
         }
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-
+    
     @IBAction func loginTapButton(_ sender: UIButton) {
-        if validUsers[txtUserName.text!] != nil && validUsers[txtUserName.text!] == txtPassword.text {
+        if isValidUserAndPassword() {
             configureRememberMe()
+            setLoggedUserNameOnUserDefault()
             self.performSegue(withIdentifier: "initialSceneSegue", sender: nil)
         } else {
-            let alert = UIAlertController(title: "Fail Login", message: "User/Pass is wrong", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
+            createFailedAlertMessage()
         }
+    }
+    
+    fileprivate func isValidUserAndPassword() -> Bool {
+        return validUsers[txtUserName.text!] != nil && validUsers[txtUserName.text!] == txtPassword.text
     }
     
     fileprivate func configureRememberMe() {
         if switchRememberMe.isOn {
-            myUserDefault.set(txtUserName.text, forKey: "userName")
-            myUserDefault.set(txtPassword.text, forKey: "userPassword")
+            quizUserDefault.set(txtUserName.text, forKey: "userName")
+            quizUserDefault.set(txtPassword.text, forKey: "userPassword")
         } else {
-            myUserDefault.removeObject(forKey: "userName")
-            myUserDefault.removeObject(forKey: "userPassword")
+            quizUserDefault.removeObject(forKey: "userName")
+            quizUserDefault.removeObject(forKey: "userPassword")
         }
+    }
+    
+    fileprivate func setLoggedUserNameOnUserDefault() {
+        quizUserDefault.set(txtUserName.text!, forKey: "loggedUserName")
+    }
+    
+    fileprivate func createFailedAlertMessage() {
+        let alert = UIAlertController(title: "Fail Login", message: "User/Pass is wrong", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
 }
 

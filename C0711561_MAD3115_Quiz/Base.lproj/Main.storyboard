@@ -106,6 +106,7 @@
                         <barButtonItem key="leftBarButtonItem" title="Logout" id="CxF-Gm-uvF">
                             <connections>
                                 <action selector="logoutButtonTap:" destination="RLo-vU-IqI" id="HfV-ma-9cp"/>
+                                <segue destination="BYZ-38-t0r" kind="show" id="vP0-Cl-hZ2"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -117,7 +118,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4I1-Tm-Kf2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1591.2" y="117.39130434782609"/>
+            <point key="canvasLocation" x="1769" y="116"/>
         </scene>
         <!--Instruction View Controller-->
         <scene sceneID="iw0-za-5XU">
@@ -149,7 +150,7 @@ It will be possible to check a raking of candidates that took this quiz, the inf
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a6X-2m-Mrc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1252" y="858.62068965517244"/>
+            <point key="canvasLocation" x="1012" y="1152"/>
         </scene>
         <!--Question View Controller-->
         <scene sceneID="WaL-KL-77r">
@@ -243,7 +244,7 @@ It will be possible to check a raking of candidates that took this quiz, the inf
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pR4-cd-LAo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2472.8000000000002" y="117.39130434782609"/>
+            <point key="canvasLocation" x="2866" y="116"/>
         </scene>
         <!--Ranking Table View Controller-->
         <scene sceneID="j8v-l6-ghc">
@@ -328,7 +329,7 @@ It will be possible to check a raking of candidates that took this quiz, the inf
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5dK-hu-M1z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2133.5999999999999" y="858.62068965517244"/>
+            <point key="canvasLocation" x="2142" y="1152"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="6z3-4Y-rkc">
@@ -350,8 +351,7 @@ It will be possible to check a raking of candidates that took this quiz, the inf
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="J7a-DI-66p"/>
         <segue reference="hbN-JQ-nTw"/>
-        <segue reference="OvW-aS-RX0"/>
+        <segue reference="x4f-Bl-gp2"/>
     </inferredMetricsTieBreakers>
 </document>
