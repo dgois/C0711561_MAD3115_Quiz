@@ -28,11 +28,11 @@ class RankingManagement {
             }
             
             if let lowestScore = rankingItem.lowestScore {
-                if lowestScore > summary.wrongAnswers {
-                    rankingItem.lowestScore = summary.wrongAnswers
+                if lowestScore > summary.correctAnswers {
+                    rankingItem.lowestScore = summary.correctAnswers
                 }
-            } else {
-                rankingItem.lowestScore = summary.wrongAnswers
+            } else if rankingItem.attempts > 1 {
+                rankingItem.lowestScore = summary.correctAnswers
             }
             
             rankingFromUserDefault[loggedUserName] = rankingItem.convertToDictionary()

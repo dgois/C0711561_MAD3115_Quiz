@@ -27,8 +27,9 @@ class RankingItem {
         let higestScoreAsString = rankingItemAsDictionary["higestScore"] as! String
         self.higestScore = Int(higestScoreAsString)!
         
-        let lowestScoreAsString = rankingItemAsDictionary["lowestScore"] as! String
-        self.lowestScore = Int(lowestScoreAsString)!
+        if let lowestScoreAsString = rankingItemAsDictionary["lowestScore"] {
+            self.lowestScore = Int(lowestScoreAsString as! String)!
+        }
         
         let attemptsAsString = rankingItemAsDictionary["attempts"] as! String
         self.attempts = Int(attemptsAsString)!
@@ -43,7 +44,7 @@ class RankingItem {
         if let ls = lowestScore {
             response["lowestScore"] = String(ls)
         } else {
-            response["lowestScore"] = nil
+            response["lowestScore"] = " "
         }
 
         return response

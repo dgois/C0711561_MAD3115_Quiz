@@ -15,7 +15,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var switchRememberMe: UISwitch!
     
     var quizUserDefault = UserDefaults.standard
-    let validUsers: [String: String] = ["denisgois":"123", "arthurgois":"123"]
+    let validUsers: [String: String] = ["denisgois":"123", "arthurgois":"123", "mary":"123"]
     
     override func viewDidLoad() {
         super.viewDidLoad()

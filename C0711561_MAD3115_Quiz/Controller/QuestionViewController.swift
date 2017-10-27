@@ -24,19 +24,52 @@ class QuestionViewController: UIViewController {
     @IBOutlet weak var questionsProgressBar: UIProgressView!
     @IBOutlet weak var lblProgressQuestions: UILabel!
     
+    var seconds = 10
     var questions: [Question] = [Question]()
     var options = [UIButton]()
-    
-    var seconds = 10
     var timer = Timer()
-
-    var answeredQuestionsAmount = 0
-    
+    var questionIndex = 0
     var summary: EndQuizSummary?
-    
     var selectedOptionButton: UIButton?
-    
     var myUserDefault = UserDefaults.standard
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        hideNavigationButton()
+        runTimer()
+        getQuestions()
+        cleanAnswerSelection()
+        configureNextQuestion()
+        
+        summary = EndQuizSummary(totalQuestions: questions.count)
+    }
+    
+    @IBAction func nextQuestion(_ sender: UIButton) {
+        verifyCorrectness()
+        configureNextQuestion()
+    }
+    
+    @IBAction func selectOption(_ sender: UIButton) {
+        options.forEach { (button) in
+            button.backgroundColor = UIColor.white
+        }
+        sender.backgroundColor = UIColor.yellow
+        selectedOptionButton = sender
+    }
+    
+    fileprivate func hideNavigationButton() {
+        let backButton = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain, target: navigationController, action: nil)
+        navigationItem.leftBarButtonItem = backButton
+    }
+    
+    fileprivate func runTimer() {
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: (#selector(QuestionViewController.updateTimer)), userInfo: nil, repeats: true)
+    }
+    
+    fileprivate func getQuestions() {
+        questions = QuestionsManagement().getQuestionList()
+    }
     
     fileprivate func cleanAnswerSelection() {
         options = [optionOne, optionTwo, optionTree, optionFour]
@@ -46,76 +79,46 @@ class QuestionViewController: UIViewController {
         selectedOptionButton = nil
     }
     
-    fileprivate func hideNavigationButton() {
-        let backButton = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain, target: navigationController, action: nil)
-        navigationItem.leftBarButtonItem = backButton
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        hideNavigationButton()
-        runTimer()
-        createQuestions()
-        cleanAnswerSelection()
-        configureNextQuestion()
-        
-        summary = EndQuizSummary(totalQuestions: questions.count)
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    func runTimer() {
-        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: (#selector(QuestionViewController.updateTimer)), userInfo: nil, repeats: true)
-    }
-    
-    @objc func updateTimer() {
-        seconds -= 1
-        lblTimer.text = "\(seconds)"
-        
-        if seconds <= 5 {
-            lblTimer.textColor = .red
-        }
-        
-        if seconds == 0 {
-            verifyCorrectness()
-            configureNextQuestion()
+    fileprivate func configureNextQuestion() {
+        if (reachEndOfTheQuiz()) {
+            displayQuestions()
+            updateProgressViewAndLabel()
+            resetTimer()
+            cleanAnswerSelection()
+            questionIndex += 1
+            
+        } else {
+            RankingManagement().createOrUpdateRankingStatistics(summary: summary!)
+            pauseTimer()
+            showSummaryAlert()
         }
     }
     
-    @IBAction func selectOption(_ sender: UIButton) {
+    fileprivate func reachEndOfTheQuiz() -> Bool {
+        return questionIndex < questions.count
+    }
+    
+    fileprivate func displayQuestions() {
+        lblQuestionStatement.text = "\(questionIndex + 1) - \(questions[questionIndex].statement)"
         
-        options.forEach { (button) in
-            button.backgroundColor = UIColor.white
-        }
-        
-        sender.backgroundColor = UIColor.black
-        
-        selectedOptionButton = sender
-        
+        optionOne.setTitle(questions[questionIndex].options[0], for: [])
+        optionTwo.setTitle(questions[questionIndex].options[1], for: [])
+        optionTree.setTitle(questions[questionIndex].options[2], for: [])
+        optionFour.setTitle(questions[questionIndex].options[3], for: [])
+    }
+    
+    fileprivate func updateProgressViewAndLabel() {
+        let ratio = Float(questionIndex + 1) / Float(questions.count)
+        questionsProgressBar.setProgress(ratio, animated: true)
+        lblProgressQuestions.text = "\(questionIndex + 1)/\(questions.count)"
     }
     
     fileprivate func resetTimer() {
         timer.invalidate()
-        
         seconds = 10
-        
         lblTimer.text = "\(seconds)"
-        
         lblTimer.textColor = .black
-        
         runTimer()
-    }
-    
-    fileprivate func pauseTimer() {
-        timer.invalidate()
-    }
-    
-    func createQuestions() {
-        questions = QuestionsManagement().getQuestionList()
     }
     
     fileprivate func showSummaryAlert() {
@@ -141,37 +144,29 @@ class QuestionViewController: UIViewController {
         self.present(summaryAlertViewController, animated: true, completion: nil)
     }
     
-    fileprivate func configureNextQuestion() {
-        if (answeredQuestionsAmount < questions.count) {
-            lblQuestionStatement.text = "\(answeredQuestionsAmount + 1) - \(questions[answeredQuestionsAmount].statement)"
-            
-            optionOne.setTitle(questions[answeredQuestionsAmount].options[0], for: [])
-            optionTwo.setTitle(questions[answeredQuestionsAmount].options[1], for: [])
-            optionTree.setTitle(questions[answeredQuestionsAmount].options[2], for: [])
-            optionFour.setTitle(questions[answeredQuestionsAmount].options[3], for: [])
-            
-            let ratio = Float(answeredQuestionsAmount + 1) / Float(questions.count)
-            questionsProgressBar.setProgress(ratio, animated: true)
-            lblProgressQuestions.text = "\(answeredQuestionsAmount + 1)/\(questions.count)"
-            
-            resetTimer()
-            
-            cleanAnswerSelection()
-            
-            answeredQuestionsAmount += 1
-            
-        } else {
-            RankingManagement().createOrUpdateRankingStatistics(summary: summary!)
-            pauseTimer()
-            showSummaryAlert()
+    @objc func updateTimer() {
+        seconds -= 1
+        lblTimer.text = "\(seconds)"
+        
+        if seconds <= 5 {
+            lblTimer.textColor = .red
         }
+        
+        if seconds == 0 {
+            verifyCorrectness()
+            configureNextQuestion()
+        }
+    }
+    
+    fileprivate func pauseTimer() {
+        timer.invalidate()
     }
     
     fileprivate func verifyCorrectness() {
         let selectedOptionOrSkipped = getSelecedOptionOrSkipped()
         
         if selectedOptionOrSkipped.isSelected {
-            if questions[answeredQuestionsAmount - 1].isCorrect(selectedOptionOrSkipped.selectedOption) {
+            if questions[questionIndex - 1].isCorrect(selectedOptionOrSkipped.selectedOption) {
                 summary?.sumCorrectAnswers()
             }
         } else {
@@ -179,14 +174,7 @@ class QuestionViewController: UIViewController {
         }
     }
     
-    @IBAction func nextQuestion(_ sender: UIButton) {
-        
-        verifyCorrectness()
-        
-        configureNextQuestion()
-    }
-    
-    func getSelecedOptionOrSkipped() -> (isSelected: Bool, selectedOption: Int) {
+    fileprivate func getSelecedOptionOrSkipped() -> (isSelected: Bool, selectedOption: Int) {
         var selectedOption = (false, 0)
         for i in 0...3 {
             if options[i].titleLabel?.text == selectedOptionButton?.titleLabel?.text {
@@ -196,14 +184,5 @@ class QuestionViewController: UIViewController {
         
         return selectedOption
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
