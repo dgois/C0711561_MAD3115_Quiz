@@ -160,78 +160,67 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background-login-image.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="suW-Hq-5wm">
-                                <rect key="frame" x="-2146" y="64" width="2560" height="672"/>
+                                <rect key="frame" x="0.0" y="64" width="414" height="672"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xXV-LI-ZOQ">
-                                <rect key="frame" x="32" y="375" width="350" height="50"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.54162081866197187" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="IgI-yL-nOo"/>
-                                    <constraint firstAttribute="width" constant="350" id="zqY-m0-NCy"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Instructions">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                </state>
-                                <connections>
-                                    <action selector="instructionsTapButton:" destination="RLo-vU-IqI" eventType="touchUpInside" id="Oco-ek-7FR"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DrN-bO-8Oa">
-                                <rect key="frame" x="32" y="475" width="350" height="50"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.54162081866197187" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="817-ON-sGe"/>
-                                    <constraint firstAttribute="width" constant="350" id="oBO-h6-yc0"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Ranking">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                </state>
-                                <connections>
-                                    <action selector="rankingTapButton:" destination="RLo-vU-IqI" eventType="touchUpInside" id="Bvc-vs-l5q"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WrS-8J-GIF">
-                                <rect key="frame" x="32" y="275" width="350" height="50"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.54162081866197187" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="iQv-Jh-WkT"/>
-                                    <constraint firstAttribute="height" constant="50" id="l7v-io-Yjp"/>
-                                    <constraint firstAttribute="width" constant="350" id="rkP-xZ-cco"/>
-                                    <constraint firstAttribute="width" constant="350" id="syq-Zo-PmQ"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Play">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                </state>
-                                <connections>
-                                    <action selector="loginTapButton:" destination="RLo-vU-IqI" eventType="touchUpInside" id="gIC-U4-aH9"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="yhR-f2-BD4">
+                                <rect key="frame" x="27.333333333333343" y="278" width="360" height="180"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WrS-8J-GIF">
+                                        <rect key="frame" x="0.0" y="0.0" width="360" height="50"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.54162081866197187" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="360" id="1mu-9n-LgO"/>
+                                            <constraint firstAttribute="height" constant="50" id="72O-QP-4S6"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" title="Play">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="loginTapButton:" destination="RLo-vU-IqI" eventType="touchUpInside" id="gIC-U4-aH9"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xXV-LI-ZOQ">
+                                        <rect key="frame" x="0.0" y="65" width="360" height="50"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.54162081866197187" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="360" id="Hsy-1E-2GI"/>
+                                            <constraint firstAttribute="height" constant="50" id="yRE-Al-VJ4"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" title="Instructions">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="instructionsTapButton:" destination="RLo-vU-IqI" eventType="touchUpInside" id="Oco-ek-7FR"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DrN-bO-8Oa">
+                                        <rect key="frame" x="0.0" y="130" width="360" height="50"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.54162081866197187" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="F9i-tn-bsI"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="360" id="yb7-Th-KR6"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" title="Ranking">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="rankingTapButton:" destination="RLo-vU-IqI" eventType="touchUpInside" id="Bvc-vs-l5q"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="WrS-8J-GIF" firstAttribute="top" secondItem="LeP-Ml-Win" secondAttribute="top" constant="211" id="2La-TA-4wB"/>
-                            <constraint firstItem="suW-Hq-5wm" firstAttribute="top" secondItem="LeP-Ml-Win" secondAttribute="top" id="81w-jH-jbE"/>
-                            <constraint firstItem="xXV-LI-ZOQ" firstAttribute="top" secondItem="WrS-8J-GIF" secondAttribute="bottom" constant="50" id="9ea-fd-GL5"/>
-                            <constraint firstItem="WrS-8J-GIF" firstAttribute="centerX" secondItem="DrN-bO-8Oa" secondAttribute="centerX" id="A3r-lj-T0Q"/>
-                            <constraint firstItem="WrS-8J-GIF" firstAttribute="centerX" secondItem="sPN-0u-E6w" secondAttribute="centerX" id="DHJ-GO-Zb4"/>
-                            <constraint firstItem="WrS-8J-GIF" firstAttribute="trailing" secondItem="xXV-LI-ZOQ" secondAttribute="trailing" id="DJV-i4-TWE"/>
-                            <constraint firstItem="WrS-8J-GIF" firstAttribute="leading" secondItem="DrN-bO-8Oa" secondAttribute="leading" id="Gvg-hx-IUM"/>
-                            <constraint firstItem="WrS-8J-GIF" firstAttribute="centerX" secondItem="xXV-LI-ZOQ" secondAttribute="centerX" id="HOq-YK-YkO"/>
-                            <constraint firstItem="DrN-bO-8Oa" firstAttribute="top" secondItem="xXV-LI-ZOQ" secondAttribute="bottom" constant="50" id="IFn-gx-REs"/>
-                            <constraint firstItem="WrS-8J-GIF" firstAttribute="leading" secondItem="xXV-LI-ZOQ" secondAttribute="leading" id="Oc1-9R-6I7"/>
-                            <constraint firstItem="LeP-Ml-Win" firstAttribute="trailing" secondItem="WrS-8J-GIF" secondAttribute="trailing" constant="32" id="Q58-NM-dMy"/>
-                            <constraint firstItem="WrS-8J-GIF" firstAttribute="leading" secondItem="sPN-0u-E6w" secondAttribute="leading" constant="32" id="ZbH-2V-1gQ"/>
-                            <constraint firstItem="WrS-8J-GIF" firstAttribute="leading" secondItem="LeP-Ml-Win" secondAttribute="leading" constant="32" id="dXd-oX-nMS"/>
-                            <constraint firstItem="WrS-8J-GIF" firstAttribute="leading" secondItem="sPN-0u-E6w" secondAttribute="leading" constant="32" id="fFc-lf-S2h"/>
-                            <constraint firstAttribute="bottom" secondItem="suW-Hq-5wm" secondAttribute="bottom" id="jnX-3T-GHs"/>
-                            <constraint firstItem="xXV-LI-ZOQ" firstAttribute="centerX" secondItem="suW-Hq-5wm" secondAttribute="centerX" constant="1073" id="mOe-hR-U2L"/>
-                            <constraint firstItem="xXV-LI-ZOQ" firstAttribute="top" secondItem="WrS-8J-GIF" secondAttribute="bottom" constant="50" id="tdJ-a3-RQN"/>
-                            <constraint firstItem="LeP-Ml-Win" firstAttribute="trailing" secondItem="suW-Hq-5wm" secondAttribute="trailing" id="uYK-7X-ZLQ"/>
-                            <constraint firstItem="WrS-8J-GIF" firstAttribute="trailing" secondItem="DrN-bO-8Oa" secondAttribute="trailing" id="w60-zc-qnv"/>
-                            <constraint firstItem="xXV-LI-ZOQ" firstAttribute="centerY" secondItem="suW-Hq-5wm" secondAttribute="centerY" id="zgJ-uz-7E3"/>
+                            <constraint firstItem="yhR-f2-BD4" firstAttribute="centerY" secondItem="sPN-0u-E6w" secondAttribute="centerY" id="E4o-1S-7pv"/>
+                            <constraint firstItem="suW-Hq-5wm" firstAttribute="bottom" secondItem="LeP-Ml-Win" secondAttribute="bottom" id="FAp-Ir-dSA"/>
+                            <constraint firstItem="suW-Hq-5wm" firstAttribute="leading" secondItem="LeP-Ml-Win" secondAttribute="leading" id="KGK-UG-ppd"/>
+                            <constraint firstItem="suW-Hq-5wm" firstAttribute="top" secondItem="LeP-Ml-Win" secondAttribute="top" id="O57-BY-GzF"/>
+                            <constraint firstItem="yhR-f2-BD4" firstAttribute="centerX" secondItem="sPN-0u-E6w" secondAttribute="centerX" id="eGl-UC-e3l"/>
+                            <constraint firstItem="suW-Hq-5wm" firstAttribute="trailing" secondItem="LeP-Ml-Win" secondAttribute="trailing" id="iXQ-h9-Il0"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="LeP-Ml-Win"/>
                     </view>
@@ -538,6 +527,6 @@ It will be possible to check a raking of candidates that took this quiz, the inf
         <image name="background-login-image.jpg" width="2560" height="1600"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="OvW-aS-RX0"/>
+        <segue reference="x4f-Bl-gp2"/>
     </inferredMetricsTieBreakers>
 </document>
