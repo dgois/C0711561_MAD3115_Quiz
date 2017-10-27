@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class QuestionViewController: UIViewController {
     
@@ -22,8 +23,6 @@ class QuestionViewController: UIViewController {
     
     @IBOutlet weak var questionsProgressBar: UIProgressView!
     @IBOutlet weak var lblProgressQuestions: UILabel!
-    
-    let tapRec = UITapGestureRecognizer()
     
     var seconds = 10
     var questions: [Question] = [Question]()
@@ -44,12 +43,6 @@ class QuestionViewController: UIViewController {
         configureNextQuestion()
         
         summary = EndQuizSummary(totalQuestions: questions.count)
-        
-        tapRec.addTarget(self, action: #selector(self.tappedLabel))
-    }
-    
-    @objc func tappedLabel() {
-        print("Its workiggggggg!")
     }
     
     @IBAction func nextQuestion(_ sender: UIButton) {
@@ -190,5 +183,13 @@ class QuestionViewController: UIViewController {
         }
         
         return selectedOption
+    }
+    
+    @IBAction func tapOnLabelToSpeakQuestion(_ sender: UITapGestureRecognizer) {
+        let voice = AVSpeechSynthesisVoice(language: "en-ca")
+        let toSay = AVSpeechUtterance(string: lblQuestionStatement.text!)
+        toSay.voice = voice
+        let spk = AVSpeechSynthesizer()
+        spk.speak(toSay)
     }
 }
