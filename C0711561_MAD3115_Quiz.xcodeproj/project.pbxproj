@@ -23,6 +23,8 @@
 		9B78EC2D1F9E9D010028AED5 /* InstructionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B78EC2C1F9E9D010028AED5 /* InstructionViewController.swift */; };
 		9B78EC311F9E9E730028AED5 /* RankingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B78EC301F9E9E730028AED5 /* RankingTableViewController.swift */; };
 		9B9CD7771FA00740007A77C9 /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B78EC2A1F9E9BF30028AED5 /* QuestionViewController.swift */; };
+		9BA5B02F1FA3B0AB006AEB21 /* icon-user.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BA5B02D1FA3B0A8006AEB21 /* icon-user.png */; };
+		9BA5B0301FA3B0AD006AEB21 /* icon-password.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BA5B02E1FA3B0A8006AEB21 /* icon-password.png */; };
 		9BE1E2D51FA1415B00183AA6 /* EndQuizSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE1E2D41FA1415B00183AA6 /* EndQuizSummary.swift */; };
 		9BE1E3171FA164FD00183AA6 /* RankingItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE1E3161FA164FD00183AA6 /* RankingItem.swift */; };
 /* End PBXBuildFile section */
@@ -46,6 +48,8 @@
 		9B78EC2A1F9E9BF30028AED5 /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
 		9B78EC2C1F9E9D010028AED5 /* InstructionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionViewController.swift; sourceTree = "<group>"; };
 		9B78EC301F9E9E730028AED5 /* RankingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingTableViewController.swift; sourceTree = "<group>"; };
+		9BA5B02D1FA3B0A8006AEB21 /* icon-user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-user.png"; sourceTree = "<group>"; };
+		9BA5B02E1FA3B0A8006AEB21 /* icon-password.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-password.png"; sourceTree = "<group>"; };
 		9BE1E2D41FA1415B00183AA6 /* EndQuizSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndQuizSummary.swift; sourceTree = "<group>"; };
 		9BE1E3161FA164FD00183AA6 /* RankingItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -76,6 +80,8 @@
 		9B6EDBB01FA23E5700A7387F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				9BA5B02D1FA3B0A8006AEB21 /* icon-user.png */,
+				9BA5B02E1FA3B0A8006AEB21 /* icon-password.png */,
 				9B6EDBB31FA2422E00A7387F /* Shorthalt_Personal_Use.otf */,
 				9B6EDBB41FA2423000A7387F /* Shorthalt_Thin_Personal_Use.otf */,
 				9B6EDBB11FA23E5F00A7387F /* background-login-image.jpg */,
@@ -197,7 +203,9 @@
 			files = (
 				9B78EC201F9E98750028AED5 /* LaunchScreen.storyboard in Resources */,
 				9B6EDBB51FA2423400A7387F /* Shorthalt_Personal_Use.otf in Resources */,
+				9BA5B0301FA3B0AD006AEB21 /* icon-password.png in Resources */,
 				9B78EC1D1F9E98750028AED5 /* Assets.xcassets in Resources */,
+				9BA5B02F1FA3B0AB006AEB21 /* icon-user.png in Resources */,
 				9B78EC1B1F9E98750028AED5 /* Main.storyboard in Resources */,
 				9B6EDBB21FA23E6200A7387F /* background-login-image.jpg in Resources */,
 				9B6EDBB61FA2423700A7387F /* Shorthalt_Thin_Personal_Use.otf in Resources */,

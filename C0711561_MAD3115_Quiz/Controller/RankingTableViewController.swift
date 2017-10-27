@@ -48,8 +48,14 @@ class RankingTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "rankingTableViewCell", for: indexPath) as! RankingTableViewCell
         
+        setCellValue(indexPath, cell)
+        setBackgroundCellColor(indexPath, cell)
+
+        return cell
+    }
+    
+    fileprivate func setCellValue(_ indexPath: IndexPath, _ cell: RankingTableViewCell) {
         let keys = Array(ranking.keys)
-        
         if let rankingItem = ranking[keys[indexPath.row]] {
             cell.lblUserName.text = rankingItem.userName
             cell.lblHighestScore.text = String(rankingItem.higestScore)
@@ -62,8 +68,14 @@ class RankingTableViewController: UITableViewController {
             
             cell.lblAttempts.text = String(rankingItem.attempts)
         }
-
-        return cell
+    }
+    
+    fileprivate func setBackgroundCellColor(_ indexPath: IndexPath, _ cell: RankingTableViewCell) {
+        if indexPath.row % 2 == 0 {
+            cell.backgroundColor = UIColor(red: CGFloat(0.844), green: CGFloat(0.783), blue: CGFloat(0.545), alpha: CGFloat(1.0))
+        } else {
+            cell.backgroundColor =  UIColor(red: CGFloat(0.564), green: CGFloat(0.654), blue: CGFloat(0.471), alpha: CGFloat(1.0))
+        }
     }
     
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

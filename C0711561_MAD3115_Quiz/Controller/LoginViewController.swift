@@ -19,16 +19,16 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        hideNavigationButton()
+        
+        doInterfaceModifications()
+        
         retrieveUserNameAndPasswordFromUserDefault()
-        for family: String in UIFont.familyNames
-        {
-            print("\(family)")
-            for names: String in UIFont.fontNames(forFamilyName: family)
-            {
-                print("== \(names)")
-            }
-        }
+    }
+    
+    fileprivate func doInterfaceModifications() {
+        configureLeftImageOfInputs(textField: txtUserName, imageName: "icon-user")
+        configureLeftImageOfInputs(textField: txtPassword, imageName: "icon-password")
+        hideNavigationButton()
     }
     
     fileprivate func hideNavigationButton() {
@@ -78,6 +78,19 @@ class LoginViewController: UIViewController {
         let alert = UIAlertController(title: "Fail Login", message: "User/Pass is wrong", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         self.present(alert, animated: true, completion: nil)
+    }
+    
+    fileprivate func configureLeftImageOfInputs(textField: UITextField, imageName: String) {
+        textField.leftViewMode = .always
+        
+        let image = UIImage(named: imageName)
+        let imageView = UIImageView(frame: CGRect(x: 12, y: 0, width: 25, height: 25))
+        let view = UIView(frame: CGRect(x: 0, y: 0, width: 50, height: 25))
+        
+        imageView.image = image
+        view.addSubview(imageView)
+        
+        textField.leftView = view
     }
 }
 

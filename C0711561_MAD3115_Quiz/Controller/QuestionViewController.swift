@@ -59,6 +59,7 @@ class QuestionViewController: UIViewController {
     }
     
     fileprivate func hideNavigationButton() {
+        self.title = "Quiz"
         let backButton = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain, target: navigationController, action: nil)
         navigationItem.leftBarButtonItem = backButton
     }

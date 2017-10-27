@@ -44,13 +44,13 @@
                                 <color key="textColor" red="0.81633098848125474" green="0.76774050069052457" blue="0.054149953765000092" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Quiz" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wcc-L9-0DZ">
-                                <rect key="frame" x="181" y="132" width="166" height="150"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quiz" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wcc-L9-0DZ">
+                                <rect key="frame" x="250.33333333333337" y="132" width="135.66666666666663" height="150"/>
                                 <fontDescription key="fontDescription" name="Shorthalt" family="Shorthalt" pointSize="150"/>
                                 <color key="textColor" red="0.068285425647346673" green="0.69246440817037391" blue="0.10667313554413532" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OhZ-77-Bs6">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OhZ-77-Bs6">
                                 <rect key="frame" x="28" y="290" width="358" height="50"/>
                                 <color key="backgroundColor" red="0.99194461107254028" green="0.99615627527236938" blue="0.99600595235824585" alpha="0.35857724471830987" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -60,7 +60,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WDb-l8-F2H">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WDb-l8-F2H">
                                 <rect key="frame" x="28" y="360" width="358" height="50"/>
                                 <color key="backgroundColor" red="0.99194461107254028" green="0.99615627527236938" blue="0.99600595235824585" alpha="0.35999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -231,9 +231,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background-login-image.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="yyn-oS-DhF">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background-login-image.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="yyn-oS-DhF">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="nAQ-hJ-KCO">
                                 <rect key="frame" x="20" y="84" width="374" height="632"/>
@@ -254,8 +253,12 @@ It will be possible to check a raking of candidates that took this quiz, the inf
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="8Qr-iz-BQL" firstAttribute="bottom" secondItem="nAQ-hJ-KCO" secondAttribute="bottom" constant="20" id="4za-u6-dWP"/>
+                            <constraint firstItem="yyn-oS-DhF" firstAttribute="top" secondItem="1le-6z-LLe" secondAttribute="top" id="7rl-am-uA8"/>
                             <constraint firstItem="8Qr-iz-BQL" firstAttribute="trailing" secondItem="nAQ-hJ-KCO" secondAttribute="trailing" constant="20" id="RFn-ja-MkD"/>
+                            <constraint firstItem="yyn-oS-DhF" firstAttribute="leading" secondItem="8Qr-iz-BQL" secondAttribute="leading" id="fiG-qE-OKf"/>
+                            <constraint firstItem="yyn-oS-DhF" firstAttribute="trailing" secondItem="8Qr-iz-BQL" secondAttribute="trailing" id="haa-u6-w24"/>
                             <constraint firstItem="nAQ-hJ-KCO" firstAttribute="top" secondItem="8Qr-iz-BQL" secondAttribute="top" constant="20" id="jRz-A0-eD4"/>
+                            <constraint firstItem="yyn-oS-DhF" firstAttribute="bottom" secondItem="8Qr-iz-BQL" secondAttribute="bottom" id="oSb-Qg-4A0"/>
                             <constraint firstItem="nAQ-hJ-KCO" firstAttribute="leading" secondItem="8Qr-iz-BQL" secondAttribute="leading" constant="20" id="tEd-le-4bA"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="8Qr-iz-BQL"/>
