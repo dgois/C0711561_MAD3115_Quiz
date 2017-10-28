@@ -65,7 +65,11 @@ class QuestionViewController: UIViewController {
     }
     
     fileprivate func runTimer() {
-        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: (#selector(QuestionViewController.updateTimer)), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 1,
+                                     target: self,
+                                     selector: (#selector(QuestionViewController.updateTimer)),
+                                     userInfo: nil,
+                                     repeats: true)
     }
     
     fileprivate func getQuestions() {
@@ -123,7 +127,9 @@ class QuestionViewController: UIViewController {
     }
     
     fileprivate func showSummaryAlert() {
-        let summaryAlertViewController = UIAlertController(title: "Summary Quiz Result", message: summary?.getSummaryText(), preferredStyle: UIAlertControllerStyle.alert)
+        let summaryAlertViewController = UIAlertController(title: "Summary Quiz Result",
+                                                           message: summary?.getSummaryText(),
+                                                           preferredStyle: UIAlertControllerStyle.alert)
         
         let okAction = UIAlertAction(title: "OK", style: .default) {
             [weak summaryAlertViewController] _ in
