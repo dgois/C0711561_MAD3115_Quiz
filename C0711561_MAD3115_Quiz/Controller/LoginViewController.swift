@@ -75,7 +75,7 @@ class LoginViewController: UIViewController {
     }
     
     fileprivate func createFailedAlertMessage() {
-        let alert = UIAlertController(title: "Fail Login", message: "User/Pass is wrong", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Login Failed", message: "Sorry, you entered an incorrect email address or password.", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }

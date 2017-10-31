@@ -20,6 +20,8 @@ class RankingTableViewController: UITableViewController {
         configureNavigationBar()
 
         ranking = RankingManagement().getRanking()
+        
+        setBackgroundImage()
     }
 
     fileprivate func configureNavigationBar() {
@@ -27,6 +29,13 @@ class RankingTableViewController: UITableViewController {
         
         let backButton = UIBarButtonItem(title: "Home", style: .plain, target: self, action: #selector(goToHome))
         navigationItem.leftBarButtonItem = backButton
+    }
+    
+    fileprivate func setBackgroundImage() {
+        let backgroundImage = UIImage(named: "background-login-image.jpg")
+        let imageView = UIImageView(image: backgroundImage)
+        self.tableView.backgroundView = imageView
+        self.tableView.backgroundColor = UIColor(white: 1, alpha: 0.5)
     }
     
     @objc func goToHome() {
@@ -49,9 +58,13 @@ class RankingTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "rankingTableViewCell", for: indexPath) as! RankingTableViewCell
         
         setCellValue(indexPath, cell)
-        setBackgroundCellColor(indexPath, cell)
+        //setBackgroundCellColor(indexPath, cell)
 
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        cell.backgroundColor = UIColor(white: 1, alpha: 0.5)
     }
     
     fileprivate func setCellValue(_ indexPath: IndexPath, _ cell: RankingTableViewCell) {
@@ -82,42 +95,5 @@ class RankingTableViewController: UITableViewController {
         // Return false if you do not want the specified item to be editable.
         return false
     }
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
